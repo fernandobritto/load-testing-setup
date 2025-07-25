@@ -2,23 +2,30 @@
   "name": "timesheet-admin",
   "version": "0.1.0",
   "description": "Timesheet Admin API",
+  "author": "Fernando Britto",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:smoke": "k6 run load-tests/tests/smoke.test.js",
+    "test:load": "k6 run load-tests/tests/load.test.js",
+    "test:stress": "k6 run load-tests/tests/stress.test.js",
+    "test:smoke:env": "k6 run --env BASE_URL=$BASE_URL load-tests/tests/smoke.test.js",
+    "test:load:env": "k6 run --env BASE_URL=$BASE_URL load-tests/tests/load.test.js",
+    "test:stress:env": "k6 run --env BASE_URL=$BASE_URL load-tests/tests/stress.test.js",
+    "test:list": "echo 'Available performance tests:' && echo '  npm run test:smoke - Quick endpoint validation' && echo '  npm run test:load - Expected production load' && echo '  npm run test:stress - Infrastructure limits' && echo 'With custom URL: BASE_URL=https://api.com npm run test:smoke:env'"
   },
   "keywords": [
     "API",
     "Rest",
     "Nodejs",
-    "Javascript",
-    "Serverless"
+    "Javascript"
   ],
-  "author": "Fernando Britto",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.1404.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.1.0",
