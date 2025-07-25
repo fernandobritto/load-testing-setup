@@ -821,6 +821,11 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.43.0.tgz"
   integrity sha512-s2UHCoiXfxMvmfzqoN+vrQ84ahUSYde9qNO1MdxmoEhyHWsfmwOpFlwYV+ePJEVc7gFnATGUi376WowX1N7tFg==
 
+"@faker-js/faker@^9.9.0":
+  version "9.9.0"
+  resolved "https://registry.npmjs.org/@faker-js/faker/-/faker-9.9.0.tgz"
+  integrity sha512-OEl393iCOoo/z8bMezRlJu+GlRGlsKbUAN7jKB6LhnKoqKve5DXRpalbItIIcwnCjs1k/FOPjFzcA6Qn+H+YbA==
+
 "@hapi/accept@^6.0.1":
   version "6.0.1"
   resolved "https://registry.npmjs.org/@hapi/accept/-/accept-6.0.1.tgz"
