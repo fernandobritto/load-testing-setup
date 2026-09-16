@@ -1,0 +1,318 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@theme {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-canvas: var(--canvas);
+  --color-canvas-dots: var(--canvas-dots);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius-lg: 0.625rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.375rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Theme: Light (default)                                              */
+/* ------------------------------------------------------------------ */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --secondary: #eef2f7;
+  --secondary-foreground: #1e293b;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #e0e7ff;
+  --accent-foreground: #3730a3;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --success: #16a34a;
+  --warning: #d97706;
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #4f46e5;
+  --canvas: #f1f5f9;
+  --canvas-dots: #cbd5e1;
+}
+
+/* ------------------------------------------------------------------ */
+/* Theme: Dark                                                         */
+/* ------------------------------------------------------------------ */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --background: #0b1120;
+  --foreground: #e2e8f0;
+  --card: #111827;
+  --card-foreground: #e2e8f0;
+  --popover: #111827;
+  --popover-foreground: #e2e8f0;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #1e293b;
+  --secondary-foreground: #e2e8f0;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #27324a;
+  --accent-foreground: #c7d2fe;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --border: #263349;
+  --input: #334155;
+  --ring: #818cf8;
+  --canvas: #0f172a;
+  --canvas-dots: #334155;
+}
+
+/* ------------------------------------------------------------------ */
+/* Theme: Dracula                                                      */
+/* ------------------------------------------------------------------ */
+[data-theme='dracula'] {
+  color-scheme: dark;
+  --background: #282a36;
+  --foreground: #f8f8f2;
+  --card: #21222c;
+  --card-foreground: #f8f8f2;
+  --popover: #21222c;
+  --popover-foreground: #f8f8f2;
+  --primary: #bd93f9;
+  --primary-foreground: #21222c;
+  --secondary: #343746;
+  --secondary-foreground: #f8f8f2;
+  --muted: #343746;
+  --muted-foreground: #9ea8c7;
+  --accent: #44475a;
+  --accent-foreground: #ff79c6;
+  --destructive: #ff5555;
+  --destructive-foreground: #21222c;
+  --success: #50fa7b;
+  --warning: #f1fa8c;
+  --border: #3b3e51;
+  --input: #44475a;
+  --ring: #bd93f9;
+  --canvas: #1e1f29;
+  --canvas-dots: #44475a;
+}
+
+/* ------------------------------------------------------------------ */
+/* Theme: JavaScript (black & yellow)                                  */
+/* ------------------------------------------------------------------ */
+[data-theme='javascript'] {
+  color-scheme: dark;
+  --background: #101010;
+  --foreground: #fafae0;
+  --card: #191919;
+  --card-foreground: #fafae0;
+  --popover: #191919;
+  --popover-foreground: #fafae0;
+  --primary: #f7df1e;
+  --primary-foreground: #101010;
+  --secondary: #242417;
+  --secondary-foreground: #f5f0c0;
+  --muted: #232323;
+  --muted-foreground: #a3a08a;
+  --accent: #33301a;
+  --accent-foreground: #f7df1e;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #101010;
+  --success: #a3e635;
+  --warning: #fbbf24;
+  --border: #2e2e24;
+  --input: #3a3a2c;
+  --ring: #f7df1e;
+  --canvas: #161613;
+  --canvas-dots: #33331f;
+}
+
+/* ------------------------------------------------------------------ */
+/* Theme: Aurora (blue/green gradient developer theme)                 */
+/* ------------------------------------------------------------------ */
+[data-theme='aurora'] {
+  color-scheme: dark;
+  --background: #061621;
+  --foreground: #d9f2ec;
+  --card: #0a2231;
+  --card-foreground: #d9f2ec;
+  --popover: #0a2231;
+  --popover-foreground: #d9f2ec;
+  --primary: #2dd4bf;
+  --primary-foreground: #04222c;
+  --secondary: #103245;
+  --secondary-foreground: #c4ede4;
+  --muted: #0e2b3c;
+  --muted-foreground: #7fb5ab;
+  --accent: #12455a;
+  --accent-foreground: #67e8f9;
+  --destructive: #fb7185;
+  --destructive-foreground: #04222c;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --border: #14384c;
+  --input: #1c4a61;
+  --ring: #2dd4bf;
+  --canvas: #071b29;
+  --canvas-dots: #17435a;
+}
+
+[data-theme='aurora'] body {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(45, 212, 191, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(56, 189, 248, 0.1), transparent);
+  background-attachment: fixed;
+}
+
+/* ------------------------------------------------------------------ */
+/* Scenario type accents                                               */
+/* One hue per workload, so a scenario is recognisable at a glance in   */
+/* the panel, the timeline, the canvas and the export review. Mid-tone  */
+/* values keep ≥3:1 contrast on every theme background, light or dark.  */
+/* ------------------------------------------------------------------ */
+:root {
+  --type-smoke: #0ea5e9;
+  --type-load: #16a34a;
+  --type-stress: #d97706;
+  --type-spike: #e11d48;
+  --type-capacity: #7c3aed;
+  --type-breakpoint: #db2777;
+  --type-soak: #0d9488;
+  --type-custom: #64748b;
+}
+
+/* Dark themes need a touch more luminance for the same perceived weight. */
+[data-theme='dark'],
+[data-theme='dracula'],
+[data-theme='javascript'],
+[data-theme='aurora'] {
+  --type-smoke: #38bdf8;
+  --type-load: #4ade80;
+  --type-stress: #fbbf24;
+  --type-spike: #fb7185;
+  --type-capacity: #a78bfa;
+  --type-breakpoint: #f472b6;
+  --type-soak: #2dd4bf;
+  --type-custom: #94a3b8;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+}
+
+* {
+  border-color: var(--border);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--primary) 30%, transparent);
+}
+
+/* Focus visibility (WCAG 2.2) */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--input) transparent;
+}
+
+/* ------------------------------------------------------------------ */
+/* React Flow theme bridge                                             */
+/* ------------------------------------------------------------------ */
+.react-flow {
+  --xy-background-color: var(--canvas);
+  --xy-edge-stroke: var(--muted-foreground);
+  --xy-edge-stroke-selected: var(--primary);
+  --xy-attribution-background-color: transparent;
+  --xy-minimap-background-color: var(--card);
+  --xy-controls-button-background-color: var(--card);
+  --xy-controls-button-background-color-hover: var(--muted);
+  --xy-controls-button-color: var(--foreground);
+  --xy-controls-button-border-color: var(--border);
+}
+
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border: 2px solid var(--card);
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__minimap-mask {
+  fill: color-mix(in oklab, var(--background) 70%, transparent);
+}
+
+.react-flow__node.selected .k6-node {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.k6-node-flag-invalid .k6-node {
+  box-shadow: 0 0 0 2px var(--destructive) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
